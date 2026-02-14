@@ -9,3 +9,5 @@ for(let i=0; i<=3 ;i++) {
    }
    process.stdout.write('\n')
 }
+
+// Create map for 1 week what you will solve from striver sheet and filter the mapping from chatGPT.
