@@ -14,22 +14,17 @@ Output: True
 Explanation: 3^3+7^3+1^3 = 27 + 343 + 1 = 371   
 */
 
-function countDigitsInNumber(num) {
-    //   let length = String(num).length
-    //   return length;
+function isArmstrongNumber(num) {
+    if(num < 0) return false;
 
-    let count = 0;
-    num = Math.abs(num); // handle negative num
-    console.log("🚀 ~ num:", num)
-
-    if (num === 0) return 1;
-
-    while(num > 0) {
-        num = Math.floor(num/10)
-        count++;
+    let strNum = num.toString();
+    let power = strNum.length;
+    let sum = 0;
+    for(let i=0; i<strNum.length; i++) {
+      let digit = Number(strNum[i])
+      sum += digit ** power;
     }
-
-    return count;
+    return num === sum;
 }
 
-console.log("🚀 countDigitsInNumber:", countDigitsInNumber(-12345))
+console.log("🚀 isArmstrongNumber:", isArmstrongNumber(371))

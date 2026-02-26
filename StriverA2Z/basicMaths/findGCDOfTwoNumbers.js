@@ -1,10 +1,9 @@
 /* 
-Find GCD of two numbers
+Find Greatest Common Divisor (GCD) of two numbers
 Problem Statement: Given two integers N1 and N2, find their greatest common divisor.
 
 Example 1:
 Input: N1 = 9, N2 = 12
-
 Output: 3
 Explanation:
 Factors of 9: 1, 3, 9
@@ -14,7 +13,6 @@ Greatest common factor: 3 (GCD)
 
 Example 2:
 Input: N1 = 20, N2 = 15
-
 Output: 5
 Explanation:
 Factors of 20: 1, 2, 4, 5, 10, 20
@@ -23,22 +21,17 @@ Common Factors: 1, 5
 Greatest common factor: 5 (GCD)
 */
 
-function countDigitsInNumber(num) {
-    //   let length = String(num).length
-    //   return length;
-
-    let count = 0;
-    num = Math.abs(num); // handle negative num
-    console.log("🚀 ~ num:", num)
-
-    if (num === 0) return 1;
-
-    while(num > 0) {
-        num = Math.floor(num/10)
-        count++;
+function findGCDofTwoNum(num1, num2) {
+    let GCD = 1;
+    for(let i =1; i<Math.min(num1, num2); i++) {
+        if(num1 % i === 0 && num2 % i === 0) {
+            GCD = i;
+        }
     }
 
-    return count;
+    return GCD;
 }
 
-console.log("🚀 countDigitsInNumber:", countDigitsInNumber(-12345))
+const N1 = 20
+const N2 = 15
+console.log("🚀 findGCDofTwoNum:", findGCDofTwoNum(N1,N2))
