@@ -16,22 +16,22 @@ Explanation: The reverse of number 7789 is 9877 and therefore it is not palindro
             
 */
 
-function countDigitsInNumber(num) {
-    //   let length = String(num).length
-    //   return length;
+function isNumberPalindrome(num) {
 
-    let count = 0;
-    num = Math.abs(num); // handle negative num
-    console.log("🚀 ~ num:", num)
+    if (num  < 0) return false
 
-    if (num === 0) return 1;
-
-    while(num > 0) {
-        num = Math.floor(num/10)
-        count++;
+    let reverse = 0
+    let tempNum = num;
+    while(tempNum > 0) {
+        let lastDigit = tempNum % 10;
+        reverse = reverse * 10 + lastDigit;
+        tempNum = Math.floor(tempNum/10)
     }
 
-    return count;
+    // if (num === reverse) return 'Palindrome Number'
+    // else return 'Not Palindrome Number'
+
+    return num === reverse;
 }
 
-console.log("🚀 countDigitsInNumber:", countDigitsInNumber(-12345))
+console.log("🚀 isNumberPalindrome:", isNumberPalindrome(4554))
