@@ -21,17 +21,22 @@
 // }
 // console.log(hasDuplicates(duplArr))
 
-let nums = [1,2,2,3,1]
+// Find second non repeating character.
+let nums = [1,2,2,3,1,4]
 let getFreq = {};
+
 function freq(nums) {
     for(let elem of nums) {
         getFreq[elem] = (getFreq[elem] || 0) + 1
     }
 
-    console.log(getFreq)
+    let getElemIndex = 0;
     for(let elem in getFreq) {
         if(getFreq[elem] < 2) {
-            return `Found non repeating elem: ${elem}`
+            getElemIndex++;
+            if(getElemIndex === 2) {
+                return `Found non repeating elem: ${elem}`;
+            }
         }
     }
 }
