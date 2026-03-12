@@ -24,6 +24,8 @@ function highestOccuringElem(array) {
     mapped[item] = (mapped[item] || 0) + 1;
   });
 
+  console.log("🚀 ~ highestOccuringElem ~ mapped:", mapped);
+
   const getKeysOnly = Object.keys(mapped);
   const getValuesOnly = Object.values(mapped);
 
@@ -32,9 +34,9 @@ function highestOccuringElem(array) {
 
   for (let i = 0; i < getValuesOnly.length; i++) {
     if (getValuesOnly[i] === largest) {
-      output.push(getKeysOnly[i]);
+      output.push(Number(getKeysOnly[i]));
     } else if (getValuesOnly[i] === smallest) {
-      output.push(getKeysOnly[i]);
+      output.push(Number(getKeysOnly[i]));
     }
   }
 
