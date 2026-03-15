@@ -12,7 +12,7 @@ function checkExistence(params) {
     const mapped = {};
 
     for(let nums of params) {
-        if (mapped[nums]) {
+        if (mapped[nums]) { // mapped[nums] !== undefined
             return true
         }
         mapped[nums] = true
@@ -21,8 +21,4 @@ function checkExistence(params) {
     return false;
 }
 
-console.log("🚀 ~ checkExistence:", checkExistence([1,2,3,4]))
-
-
-
-
+console.log("🚀 ~ checkExistence:", checkExistence([1,2,3,1]))
