@@ -34,6 +34,6 @@ function freqOfChar(params) {
     }
 
     return mapped;
-}
+} 
 
-console.log("🚀 ~ freqOfChar ~ freqOfChar:", freqOfChar(input))
+console.log("🚀 ~ freqOfChar:", freqOfChar(input))
