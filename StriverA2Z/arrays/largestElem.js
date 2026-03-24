@@ -15,3 +15,17 @@
 // 10  
 // Explanation:
 // 10 is the largest element in the array.
+
+
+function largestElem(nums) {
+    let max = nums[0];
+    for(let i=0;i<nums.length;i++) {
+        if(nums[i] > max) {
+            max = nums[i]
+        }
+    }
+
+    return max;
+}
+
+console.log("🚀 ~ largestElem:", largestElem([2, 5, 1, 3, 0]))
