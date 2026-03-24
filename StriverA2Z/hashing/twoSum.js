@@ -35,11 +35,11 @@ function twoSum(nums, target) {
     for(let i=0; i<nums.length; i++) {
         let needed = target - nums[i]; // 9-[2]=7 >> 9-[7]=2
 
-        if (mapped.has(needed)) { // needed 7 exist? >> needed 2 exist?
-            return [mapped.get(needed), i] // [needed is 2 as get returns key ,I is 1]
+        if (mapped.has(needed)) { // needed 7 exist? false >> needed 2 exist? Yes
+            return [mapped.get(needed), i] // Now .has checks and returns the number 2, and index is 1 so [2, 1]
         }
 
-        mapped.set(nums[i] , i) // 2(key), 0(value) //key(number) → value(index)
+        mapped.set(nums[i] , i) // 2, 0 [key(number) → value(index)]
     }
 }
 
