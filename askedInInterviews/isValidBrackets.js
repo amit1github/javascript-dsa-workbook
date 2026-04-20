@@ -6,16 +6,16 @@ An input string is valid if:
 3. Every close bracket has a corresponding open bracket of the same type.
  */
 
-function isValidBrackets(params) {
-    let stack = []
+function isValidBrackets(str) {
+    let stack = [];
     const map = {
         ')' : '(',
         ']' : '[',
         '}' : '{',
     };
 
-    for (const char of params) {
-        if (map[char] === undefined) {
+    for (const char of str) {
+        if (map[char] === undefined) { // checking map keys with STR inputs
             stack.push(char)
         } else {
             if(stack.length === 0 || stack[stack.length-1] !== map[char]) {
@@ -29,4 +29,4 @@ function isValidBrackets(params) {
     return stack.length === 0
 }
 
-console.log(isValidBrackets('{[)]}'))
+console.log(isValidBrackets('{[()]}'))
