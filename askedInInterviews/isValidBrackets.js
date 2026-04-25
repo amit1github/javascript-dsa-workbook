@@ -17,7 +17,11 @@ function isValidBrackets(str) {
     for (const char of str) {
         if (map[char] === undefined) { // checking map keys with STR inputs
             stack.push(char)
+            console.log("🚀 ~ isValidBrackets ~ stack:", stack)
         } else {
+
+            console.log("🚀 ~ isValidBrackets ~ stack[stack.length-1]:", stack[stack.length-1])
+            console.log("🚀 ~ isValidBrackets ~ map[char]:", map[char])
             if(stack.length === 0 || stack[stack.length-1] !== map[char]) {
                 return false;
             }
