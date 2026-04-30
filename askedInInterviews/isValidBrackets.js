@@ -35,27 +35,50 @@ An input string is valid if:
 // }
 // console.log(isValidBrackets('{[()]}'))
 
-function isValid(string) {
-  let stack = [];
-  for (let char of string) {
-    if (["(", "{", "["].includes(char)) {
-      stack.push(char);
-    } else {
-      if (stack.length === 0) return 'Invalid';
-      let last;
-      last = stack.pop();
+// function isValid(string) {
+//   let stack = [];
+//   for (let char of string) {
+//     if (["(", "{", "["].includes(char)) {
+//       stack.push(char);
+//     } else {
+//       if (stack.length === 0) return 'Invalid';
+//       let last;
+//       last = stack.pop();
 
-      if (
-        (char === ')' && last !== '(') ||
-        (char === '}' && last !== '{') ||
-        (char === ']' && last !== '[')
-      ) {
-        return false;
-      }
+//       if (
+//         (char === ')' && last !== '(') ||
+//         (char === '}' && last !== '{') ||
+//         (char === ']' && last !== '[')
+//       ) {
+//         return false;
+//       }
+//     }
+//   }
+
+//   return stack.length === 0;
+// }
+
+// console.log(isValid("[([{]})]"));
+
+function isValidBrackets(string) {
+  let stack = [];
+  let pairs = {
+    ')' : '(',
+    '}' : '{',
+    ']' : '['
+  }
+
+  for (const char of string) {
+    if (!pairs[char]) {
+        stack.push(char)
+    } else {
+        if (stack.pop() !== pairs[char]) {
+            return false
+        }
     }
   }
 
   return stack.length === 0;
 }
 
-console.log(isValid("[([{]})]"));
+console.log(isValidBrackets("[([])]"));
