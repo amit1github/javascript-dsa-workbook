@@ -33,9 +33,3 @@ function flataObject(input) {
     }
 }
 console.log(flataObject(input))
-
-
-
-
-
-
