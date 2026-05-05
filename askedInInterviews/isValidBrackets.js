@@ -72,13 +72,14 @@ function isValidBrackets(string) {
     if (!pairs[char]) {
         stack.push(char)
     } else {
+        console.log(pairs[char])
         if (stack.pop() !== pairs[char]) {
             return false
         }
     }
   }
-
+  
   return stack.length === 0;
 }
 
-console.log(isValidBrackets("[([])]"));
+console.log(isValidBrackets("()"));
