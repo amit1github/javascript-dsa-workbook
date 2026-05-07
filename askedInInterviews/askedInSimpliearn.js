@@ -21,7 +21,6 @@ console.log(obj[a]);
 // i/p => {a:{b:{c:1}},d:2,e:{f:3}}
 // o/p => {'a+b+c':1,d:2,'e+f':3}
 
-
 const input = {a:{b:{c:1}},d:2,e:{f:3}}
 
 function flataObject(input) {

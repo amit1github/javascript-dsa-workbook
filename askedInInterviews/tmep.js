@@ -8,11 +8,10 @@ const flattenObject = (obj, parentKey = '', result = {}) => {
         } else {
             result[newKey] = obj[key]
         }
-
     }
 
     console.log("🚀 ~ flattenObject ~ parentKey:", parentKey)
-    return result
+    return result;
 }
 
 // input = { a: 1, b: { c: 2, d: { e: 3 } } }
