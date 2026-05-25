@@ -23,9 +23,25 @@
 // }
 // console.log(firstNonRepeatedChar('aabbbcdde'))
 
-function primeNum() {
-    for (let i = 0; i < 100; i++) {
-        console.log(i)
+function printPrimeNumbers() {
+  for (let num = 1; num <= 100; num++) {
+    let isPrime = true;
+
+    if (num <= 1) {
+      isPrime = false;
+    } else {
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+          isPrime = false;
+          break;
+        }
+      }
     }
+
+    if (isPrime) {
+      console.log(num);
+    }
+  }
 }
-console.log(primeNum())
+
+printPrimeNumbers();
